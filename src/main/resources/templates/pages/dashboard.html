@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout_common}"
+      >
+<body class="hold-transition sidebar-mini">
+
+<div class="content-wrapper" layout:fragment="content">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">Dashboard</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Live Chart</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Info boxes -->
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">CPU Traffic(Live)</span>
+                            <span class="info-box-number">
+                  10
+                  <small>%</small>
+                </span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <!-- /.col -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box mb-3">
+                        <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-network-wired"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">Network Usage(After Boot)</span>
+                            <span class="info-box-number">4,235
+                                                  <small>MB</small>
+                            </span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <!-- /.col -->
+
+                <!-- fix for small devices only -->
+                <div class="clearfix hidden-md-up"></div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box mb-3">
+                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-memory"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">Memory Usages(Live)</span>
+                            <span class="info-box-number">21
+                  <small>%</small>
+                            </span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <!-- /.col -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="info-box mb-3">
+                        <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-database"></i></span>
+
+                        <div class="info-box-content">
+                            <span class="info-box-text">Disk Usages(Live)</span>
+                            <span class="info-box-number">54
+                                <small>%</small>
+                            </span>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                    <!-- /.info-box -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- interactive chart -->
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="far fa-chart-bar"></i>
+                                CPU Usage Chart
+                            </h3>
+
+                            <div class="card-tools">
+                                Real time
+                                <div class="btn-group" id="cpu-realtime" data-toggle="btn-toggle">
+                                    <button type="button" class="btn btn-default btn-sm active" data-toggle="on">On</button>
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="off">Off</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div id="cpu" style="height: 300px;"></div>
+                        </div>
+                        <!-- /.card-body-->
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+                <div class="col-md-6">
+                    <!-- interactive chart -->
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="far fa-chart-bar"></i>
+                                Network Usage Chart
+                            </h3>
+
+                            <div class="card-tools">
+                                Real time
+                                <div class="btn-group" id="network-realtime" data-toggle="btn-toggle">
+                                    <button type="button" class="btn btn-default btn-sm active" data-toggle="on">On</button>
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="off">Off</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div id="network" style="height: 300px;"></div>
+                        </div>
+                        <!-- /.card-body-->
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+                <!-- /.col -->
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- interactive chart -->
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="far fa-chart-bar"></i>
+                                Memory Usage Chart
+                            </h3>
+
+                            <div class="card-tools">
+                                Real time
+                                <div class="btn-group" id="memory-realtime" data-toggle="btn-toggle">
+                                    <button type="button" class="btn btn-default btn-sm active" data-toggle="on">On</button>
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="off">Off</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div id="memory" style="height: 300px;"></div>
+                        </div>
+                        <!-- /.card-body-->
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+                <div class="col-md-6">
+                    <!-- interactive chart -->
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="far fa-chart-bar"></i>
+                                Disk Usage Chart
+                            </h3>
+
+                            <div class="card-tools">
+                                Real time
+                                <div class="btn-group" id="disk-realtime" data-toggle="btn-toggle">
+                                    <button type="button" class="btn btn-default btn-sm active" data-toggle="on">On</button>
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="off">Off</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div id="disk" style="height: 300px;"></div>
+                        </div>
+                        <!-- /.card-body-->
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+                <!-- /.col -->
+            </div>
+
+        </div><!--/. container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+
+</body>
+</html>

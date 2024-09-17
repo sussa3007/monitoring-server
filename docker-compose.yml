@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  monitoring-server:
+    image: miraclestudio/monitoring-server:1.0.0  # Docker Hub에서 이미지 가져오기
+    container_name: monitoring-server-app
+    restart: always
+    ports:
+      - "18189:18189"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

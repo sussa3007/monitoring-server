@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="f_jsimport">
+
+<!--    <script asyn src="/plugins/fontawesome-free-5.15.1-web/js/all.min.js"></script>-->
+    <!-- jQuery -->
+    <script asyn th:src="@{/vendor/jquery/jquery.min.js}"></script>
+
+    <!-- Bootstrap 4 -->
+    <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+    <!-- AdminLTE App -->
+    <script th:src="@{/vendor/AdminLTE/js/adminlte.min.js}"></script>
+    <script th:src="@{/vendor/AdminLTE/js/adminlte.js}"></script>
+    <script th:src="@{/vendor/AdminLTE/js/demo.js}"></script>
+<!--    <script th:src="@{/vendor/AdminLTE/js/pages/dashboard2.js}"></script>-->
+    <script th:src="@{/vendor/raphael/raphael.min.js}"></script>
+    <script th:src="@{/vendor/chart.js/Chart.min.js}"></script>
+    <script th:src="@{/vendor/jquery-mapael/jquery.mapael.min.js}"></script>
+    <script th:src="@{/vendor/jquery-mapael/maps/usa_states.min.js}"></script>
+    <script th:src="@{/vendor/jquery-mousewheel/jquery.mousewheel.js}"></script>
+    <script th:src="@{/vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js}"></script>
+    <script th:src="@{/js/common.js}"></script>
+
+
+    <!-- Dashboard -->
+    <script th:src="@{/js/pages/dashboard.js}"></script>
+    <script th:src="@{/vendor/jquery-ui/jquery-ui.min.js}"></script>
+    <script th:src="@{/vendor/flot/jquery.flot.js}"></script>
+    <script th:src="@{/vendor/flot-old/jquery.flot.resize.min.js}"></script>
+    <script th:src="@{/vendor/flot-old/jquery.flot.pie.min.js}"></script>
+</th:block>
+</html>
